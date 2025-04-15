@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - preConditions:
+      - runningAs:
+          username: cabco
+
+  - changeSet:
+        id: "1"
+        author: Francisco Guerrero
+        context: company
+        labels: company 
+        changes: 
+            - sqlFile:
+                path: ./db/changelog/changes/create-table.sql

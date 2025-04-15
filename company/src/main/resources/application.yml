@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: Company
+    version: 0.1
+  datasource:
+    username: cabco
+    password: C4bc*2025
+    url: jdbc:mysql://localhost:3306/cabco?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&verifyServerCertificate=false&useSSL=false&AllowLoadLocalInfile=true&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    name: cabco-company-ds
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+server:
+  port: 8081
+  servlet:
+    context-path: /cabco
+
+debug: true
